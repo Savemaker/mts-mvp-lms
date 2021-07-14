@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<header th:replace="fragments/header :: header"></header>
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#000033;font-family: Georgia, serif;padding-left: 30px; padding-right: 30px; line-height: 50px">
+
+<h1 style="color: white" class="text-center">Профиль</h1>
+<div class="container" style="padding-top: 30px">
+    <img style="margin-right: 50%; margin-left: 50%" src="..." class="img-fluid" alt="Аватарка">
+
+    <div class="form-group">
+        <label style="color:white;font-size: large" for="profile-name">Имя пользователя</label>
+        <input type="text" class="form-control" id="profile-name">
+    </div>
+    <button type="button" class="btn btn-success pull-left">Сохранить изменения</button>
+</div>
+<div class="container" style="padding-top: 30px">
+    <div class="form-group">
+        <label style="color:white;font-size: large" for="profile-pic">Изменить аватар</label>
+        <input style="color:white;" type="file" class="form-control-file" id="profile-pic">
+    </div>
+    <button type="button" class="btn btn-success pull-left">Изменить аватар</button>
+</div>
+</body>
+</html>

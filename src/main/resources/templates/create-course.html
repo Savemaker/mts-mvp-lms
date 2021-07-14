@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:replace="fragments/header :: header"></header>
+<head>
+  <meta charset="UTF-8">
+  <title>Создать курс</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body
+    style="background-color:#000033;font-family: Georgia, serif;padding-left: 30px; padding-right: 30px; line-height: 50px">
+<h1 style="color: white" class="text-center">Создать курс</h1>
+<div class="container" style="padding-top: 30px">
+  <img style="margin-right: 50%; margin-left: 50%" src="..." class="img-fluid" alt="Аватарка">
+  <form th:object="${course}" method="post" th:action="@{/course}">
+    <div class="form-group">
+      <label style="color:white;font-size: large" for="name">Название</label>
+      <input type="text" th:field="*{title}" class="form-control" id="name" th:value="${course.title}">
+      <small style="color: darkred" class="validation-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Необходимо заполнить поле названия курса</small>
+      <label style="color:white;font-size: large" for="author">Автор</label>
+      <input type="text" th:field="*{author}"class="form-control" id="author" th:value="${course.author}">
+      <small class="validation-error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Необходимо заполнить поле автора курса</small>
+      <input type="hidden" th:field="*{id}" th:value="${course.id}">
+      <button class="btn btn-success pull-right" th:type="submit">Сохранить изменения</button>
+    </div>
+  </form>
+  <div class="form-group">
+    <label style="color:white;font-size: large" for="profile-pic">Выберите обложку курса</label>
+    <input style="color:white;" type="file" class="form-control-file" id="profile-pic">
+  </div>
+  <button type="button" class="btn btn-success pull-left">Обновить обложку</button>
+</div>
+<div class="container" style="padding: 5%">
+  <p style="color: white" class="text-left">Новый урок</p>
+  <table style="color: black; background-color: white" class="table table-hover">
+    <thead>
+    <tr>
+      <th class="text-center" scope="col">Id</th>
+      <th class="text-center" scope="col">Название</th>
+      <th class="text-center" scope="col">Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th class="text-center" scope="row">1</th>
+      <td class="text-center">Course name</td>
+      <td class="text-center">
+        <button type="button" class="btn btn-danger">Удалить</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container" style="padding: 1%">
+  <p style="color: white" class="text-left">Пользователи, свяазнные с курсом</p>
+  <table style="color: black; background-color: white" class="table table-hover">
+    <thead>
+    <tr>
+      <th class="text-center" scope="col">Id</th>
+      <th class="text-center" scope="col">Название</th>
+      <th class="text-center" scope="col">Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th class="text-center" scope="row">1</th>
+      <td class="text-center">Course name</td>
+      <td class="text-center">
+        <button type="button" class="btn btn-danger">Снять с курса</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

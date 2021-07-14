@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<header th:replace="fragments/header :: header"></header>
+<head>
+    <title>Создать новый урок</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#000033;font-family: Georgia, serif;padding-left: 30px; padding-right: 30px; line-height: 50px">
+
+<h1 style="color: white" class="text-center">Создать урок</h1>
+<div class="form-group">
+    <label style="color:white;font-size: large" for="lesson-name">Название урока:</label>
+    <input type="text" class="form-control" id="lesson-name">
+</div>
+<div class="form-group">
+    <label style="color:white;font-size: large" for="lesson-content">Содержание урока:</label>
+    <textarea class="form-control" id="lesson-content" rows="20"></textarea>
+</div>
+<button type="button" class="btn btn-success pull-right">Сохранить</button>
+
+</body>
+</html>
