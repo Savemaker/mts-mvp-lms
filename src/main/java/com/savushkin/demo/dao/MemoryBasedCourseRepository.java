@@ -1,9 +1,6 @@
 package com.savushkin.demo.dao;
 
 import com.savushkin.demo.domain.Course;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,11 +8,14 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
+import org.springframework.stereotype.Component;
 
 @Component
 public class MemoryBasedCourseRepository implements CourseRepository {
 
 	private final Map<Long, Course> courseMap = new ConcurrentHashMap<>();
+
 	private final AtomicLong identity = new AtomicLong();
 
 	@PostConstruct
@@ -54,4 +54,5 @@ public class MemoryBasedCourseRepository implements CourseRepository {
 				.stream().filter(course -> course.getTitle().startsWith(prefix))
 				.collect(Collectors.toList());
 	}
+
 }

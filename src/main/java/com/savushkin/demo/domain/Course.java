@@ -3,9 +3,12 @@ package com.savushkin.demo.domain;
 import javax.validation.constraints.NotBlank;
 
 public class Course {
+
 	private Long id;
+
 	@NotBlank(message = "Укажите имя автора")
 	private String author;
+
 	@NotBlank(message = "Укажите название курса")
 	private String title;
 
@@ -41,4 +44,5 @@ public class Course {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 }
