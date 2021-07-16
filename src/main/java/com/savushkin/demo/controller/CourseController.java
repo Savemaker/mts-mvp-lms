@@ -30,7 +30,7 @@ public class CourseController {
 	}
 
 	@GetMapping
-	public String getCourses(Model model, @RequestParam(name = "titlePrefix", required = false) String titlePrefix) {
+	public String getByTitleWithPrefix(Model model, @RequestParam(name = "titlePrefix", required = false) String titlePrefix) {
 		model.addAttribute("courses", courseCrudService.getCourses(titlePrefix));
 		model.addAttribute("activePage", "courses");
 		return "course-list";
